@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+
+            // Logic for handling multiple choice question
+
+            // Loading Document Object Model
+            document.addEventListener('DOMContentLoaded',  function (){
+
+                // If response matches with correct answer
+                document.querySelector('#b1').addEventListener('click',  function (){
+
+                    // Changing button color and showing message
+
+                    let button = document.querySelector('#b1');
+                    button.style.backgroundColor = 'green';
+                    document.querySelector('#check').innerHTML = "Correct";
+
+                });
+
+                // If answer doesn't match
+
+                // Select all element of class b2
+                let x = document.querySelectorAll('.b2');
+
+                // Iterate through the list and select the element which is clicked
+                for (let i = 0; i < x.length; i++)
+                {
+                    x[i].addEventListener('click', function(){
+
+
+                        // Change color and show message
+                        x[i].style.backgroundColor = 'red';
+                        document.querySelector('#check').innerHTML = "Incorrect";
+                });
+
+                }
+            });
+
+            // Logic for handling free response
+
+            // Loading Document Object Model
+            document.addEventListener('DOMContentLoaded', function (){
+
+                // Selecting element with id b3
+                document.querySelector('#b3').addEventListener('click', function (){
+
+                // Taking value from text field
+                let x = document.querySelector('#text').value;
+
+                // If answer matches
+                if (x == "Asia"){
+
+                    let button = document.querySelector('#text');
+
+                    // Make text field green
+                    button.style.backgroundColor = 'green';
+
+                    // Show text
+                    document.querySelector('#correctness').innerHTML = "Correct";
+                }
+
+                // If answer doesn't matches
+                else{
+
+                    let button = document.querySelector('#text');
+
+                    // Make text field red
+                    button.style.backgroundColor = 'red';
+
+                    // Show text
+                    document.querySelector('#correctness').innerHTML = "Incorrect";
+                }
+            });
+            });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Bangladesh gained independence from which country?</h3>
+
+                <!--Buttons-->
+                <button class="b2">India</button>
+                <button class="b2">Nepal</button>
+
+                <button class="b2">United Kingdom</button>
+                <button id="b1">Pakisthan</button>
+                <button class="b2">Myanmar</button>
+
+                <!--Text showing correctness-->
+                <p id="check"></p>
+
+
+            </div>
+
+            </div>
+
+                <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>In which continent Bangladesh is located?</h3>
+                <input type="text" id="text" autocomplete='off'>
+
+                <!--Button-->
+                <button id="b3">Check Answer</button>
+
+                <!--Text showing correctness-->
+                <p id="correctness"></p>
+
+            </div>
+
+        </div>
+    </body>
+</html>
