@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: In case of sorted lists running times of bubble sort are lower than other sorting algorithms. Because in sorted list lower bound of bubble sort is Omega(n) whereas the lower bound are Omega(n^2) and Omega(nlogn) for selection sort and merge sort respectively. Bubble sort performs poorly than sort2.
+
+sort2 uses: Merge sort
+
+How do you know?: Running times of merge sort in all test examples except sorted lists were lower than others because its complexity is Theta(nlogn) which is much better than both bubble sort and selection sort.
+
+sort3 uses: Selection sort
+
+How do you know?: Selection sort does not work well on list either sorted, unsorted or random values. Because its complexity is Theta(n^2). It performs poorly than merge sort in all test cases. And in case of sorted list it could not do any better and its running times were higher from both bubble sort and merge sort.
